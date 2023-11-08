@@ -1,0 +1,175 @@
+.callBtn {
+    width:  60px;
+    height:  60px;
+    background-color: orange;
+    margin: 300px auto;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* ========================================== */
+
+
+/* Trên điện thoại w = 75, h = 75 */
+/* Trên điện thoại w = 60, h = 60 */
+
+
+/* ========================================== */
+
+.callBtn::after , .callBtn::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 166, 0, 0.66);
+    transform-origin: center;
+    top: 0;left: 0;
+    z-index: -1;
+    border-radius: 50%;
+    animation: incoming 10s infinite;
+}
+.callBtn::before{
+    animation-delay: .27s;
+}
+
+
+a {
+    color: white;
+}
+
+.icon {
+    animation: ani 10s infinite;
+    /* animation-delay: 3s; */
+}
+
+@keyframes incoming {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    5% {
+        opacity: .6;
+    }
+    10% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes ani {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    1% {
+        transform: rotate(-10deg);
+    }
+
+    2% {
+        transform: rotate(20deg);
+    }
+
+    3% {
+        transform: rotate(-20deg);
+    }
+
+    4% {
+        transform: rotate(25deg);
+    }
+
+    5% {
+        transform: rotate(-25deg);
+    }
+
+    6% {
+        transform: rotate(0deg);
+
+    }
+
+    /* 10%{
+        transform: rotate(-10deg);
+    }
+    10%{
+        transform: rotate(-10deg);
+    }
+    10%{
+        transform: rotate(-10deg);
+    } */
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes myAnimation {
+    0% {
+        /* Bắt đầu với trạng thái ban đầu */
+        transform: translateX(0);
+    }
+
+    50% {
+        /* Điều này xảy ra ở giữa quá trình animation */
+        transform: translateX(100px);
+    }
+
+    100% {
+        /* Kết thúc với trạng thái cuối cùng */
+        transform: translateX(0);
+    }
+}
+
+.myElement {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    animation: myAnimation 2s linear infinite;
+    /* Chạy vô hạn trong 4 giây */
+    animation-iteration-count: infinite;
+    /* Chạy vô hạn số lần */
+    animation-delay: 2s;
+    /* Độ trễ 2 giây trước khi bắt đầu mỗi lần lặp */
+}
+
+.mover {
+    width: 50px;
+    height: 50px;
+    background: #f06d06;
+    border-radius: 50%;
+    animation: move 5s infinite ease-in-out;
+}
+
+@keyframes move {
+
+    20%,
+    100% {
+        opacity: 0;
+        transform: translate(200px, 0);
+    }
+
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+}
+
+.area {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    border: 2px solid #f06d06;
+    border-radius: 50px;
+}
+
+body {
+    padding: 20px;
+}
